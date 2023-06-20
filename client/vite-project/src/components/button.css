@@ -1,0 +1,93 @@
+.button {
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    border: none;
+  }
+  
+  .button--solid {
+    background-color: var(--button-solid-background-color);
+    color: var(--button-solid-color);
+  }
+  
+  .button--outline {
+    background-color: transparent;
+    border: 2px solid var(--button-outline-border-color);
+    color: var(--button-outline-color);
+  }
+  
+  .button--ghost {
+    background-color: transparent;
+    color: var(--button-ghost-color);
+  }
+  
+  .button--primary {
+    --button-solid-background-color: var(--color-primary);
+    --button-solid-color: white;
+    --button-outline-border-color: var(--color-primary);
+    --button-outline-color: var(--color-primary);
+    --button-ghost-color: var(--color-primary);
+  }
+  
+  .button--secondary {
+    --button-solid-background-color: var(--color-secondary);
+    --button-solid-color: white;
+    --button-outline-border-color: var(--color-secondary);
+    --button-outline-color: var(--color-secondary);
+    --button-ghost-color: var(--color-secondary);
+  }
+  
+  .button--loading {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  
+  .button--loading .button__loading__dot {
+    display: inline-block;
+    background-color: var(--button-solid-color);
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+    animation: loading 0.6s infinite ease-in-out;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .button__loading--primary .button__loading__dot {
+    background-color: var(--color-primary);
+  }
+  
+  .button__loading--secondary .button__loading__dot {
+    background-color: var(--color-secondary);
+  }
+  
+  .button--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .button--active {
+    transform: translateY(1px);
+  }
+  
+  .button__icon {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
