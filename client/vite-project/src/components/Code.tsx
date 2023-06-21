@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import CodeMirror from "@uiw/react-codemirror";
-import { githubDark } from "@uiw/codemirror-theme-github";
-import { javascript } from '@codemirror/lang-javascript';
+import { githubDark, githubLight } from "@uiw/codemirror-theme-github";
+import { javascript } from "@codemirror/lang-javascript";
+import { useTheme } from "../hooks/useTheme";
 
 interface CodeMirrorProps {
   value?: string;
@@ -20,8 +21,8 @@ const CodeMirrorEditor = ({
     lineNumbers: true,
     keyMap: "sublime",
     readOnly: readOnly,
-    
   });
+  const { isDark } = useTheme();
 
   const handleCodeMirrorChange = (editor: any, data: any, value: string) => {
     onChange(value);
@@ -29,12 +30,11 @@ const CodeMirrorEditor = ({
 
   return (
     <CodeMirror
-      theme={githubDark}
+      theme={isDark ? githubDark : githubLight}
       lang={lang}
       value={value}
       height="400px"
       maxHeight="400px"
-      
       onBeforeChange={(editor, data, value) =>
         handleCodeMirrorChange(editor, data, value)
       }

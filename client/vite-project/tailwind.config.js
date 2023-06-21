@@ -10,17 +10,17 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: colors.green[700],
-          50: colors.green[50],
-          100: colors.green[100],
-          200: colors.green[200],
-          300: colors.green[300],
-          400: colors.green[400],
-          500: colors.green[500],
-          600: colors.green[600],
-          700: colors.green[700],
-          800: colors.green[800],
-          900: colors.green[900],
+          DEFAULT: colors.blue[700],
+          50: colors.blue[50],
+          100: colors.blue[100],
+          200: colors.blue[200],
+          300: colors.blue[300],
+          400: colors.blue[400],
+          500: colors.blue[500],
+          600: colors.blue[600],
+          700: colors.blue[700],
+          800: colors.blue[800],
+          900: colors.blue[900],
 
         },
         secondary: {
@@ -46,4 +46,5 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
    ],
+   darkMode: 'class',
 }

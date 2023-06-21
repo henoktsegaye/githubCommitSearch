@@ -41,9 +41,9 @@ const Collapsible = ({
   };
 
   return (
-    <div className={`${className ?? ""} w-full bg-gray-900 rounded-lg`}>
-      <div className=" -top-3 sticky z-40 rounded-t-lg " onClick={handleToggle}>
-        <div className="flex w-full items-center justify-between rounded-lg cursor-pointer p-3 px-4 bg-gray-900">
+    <div className={`${className ?? ""} w-full bg-gray-200 dark:bg-black rounded-lg`}>
+      <div className=" -top-3 sticky z-2 rounded-t-lg " onClick={handleToggle}>
+        <div className="flex w-full items-center justify-between rounded-lg cursor-pointer p-3 px-4 bg-gray-200 dark:bg-black">
           <div className="flex flex-1 mr-4 ">
             <a
               href={commit.author?.html_url}
@@ -61,7 +61,7 @@ const Collapsible = ({
             </a>
 
             <p
-              className=" w-full break-all line-clamp-2"
+              className=" w-full text-ellipsis break-all line-clamp-2"
               style={{
                 wordBreak: "break-all",
               }}
@@ -71,7 +71,7 @@ const Collapsible = ({
           </div>
           <div className="flex items-center gap-2">
             {lang && (
-              <div className="px-3 bg-gray-700 text-sm rounded">{lang}</div>
+              <div className="px-3 bg-gray-400 dark:bg-gray-700 text-sm rounded">{lang}</div>
             )}
             <button
               onClick={(e) => {

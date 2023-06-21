@@ -2,7 +2,7 @@ import React, { useState, ReactNode } from "react";
 import classNames from "classnames";
 
 type ButtonProps = {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: () => void;
   variant?: "solid" | "outline" | "ghost";
   color?: "primary" | "secondary";
@@ -15,6 +15,7 @@ type ButtonProps = {
 
 const Button = ({
   children,
+  className,
   variant = "solid",
   color = "primary",
   icon,
@@ -24,16 +25,17 @@ const Button = ({
   onClick,
 }: ButtonProps) => {
   // button classes are defined in button.css
-  const buttonClasses = classNames(
-    "px-4 py-2 flex font-bold rounded-md focus:outline-none transition-all",
+  const buttonClasses = classNames(className ?? '',
+    "px-4 py-2 flex items-center font-semi-bold rounded focus:outline-none transition-all",
     {
-      "bg-primary text-white": variant === "solid" || variant === "ghost",
+      "bg-primary text-white": variant === "solid" ,
       "border-2 border-primary text-primary hover:bg-primary hover:text-white":
         variant === "outline",
-      "bg-transparent text-primary hover:bg-primary hover:text-white":
+      "bg-transparent ":
         variant === "ghost",
       "bg-gray-400 text-gray-700 cursor-not-allowed": disabled,
       relative: loading,
+      [className ?? ""]: className,
     }
   );
 
