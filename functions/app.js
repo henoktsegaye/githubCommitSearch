@@ -1,6 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const serverless = require('serverless-http');
+
 require('dotenv').config();
 
 const app = express();
@@ -87,8 +89,4 @@ app.get('/code/:owner/:repo/:sha', async (req, res) => {
 
 
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
-
+exports.handler = serverless(app)
