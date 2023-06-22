@@ -17,16 +17,7 @@ const CodeMirrorEditor = ({
   onChange,
   readOnly = false,
 }: CodeMirrorProps) => {
-  const [options, setOptions] = useState({
-    lineNumbers: true,
-    keyMap: "sublime",
-    readOnly: readOnly,
-  });
   const { isDark } = useTheme();
-
-  const handleCodeMirrorChange = (editor: any, data: any, value: string) => {
-    onChange(value);
-  };
 
   return (
     <CodeMirror
@@ -35,9 +26,6 @@ const CodeMirrorEditor = ({
       value={value}
       height="400px"
       maxHeight="400px"
-      onBeforeChange={(editor, data, value) =>
-        handleCodeMirrorChange(editor, data, value)
-      }
       extensions={[javascript({ jsx: true })]}
     />
   );
